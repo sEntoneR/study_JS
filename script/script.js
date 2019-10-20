@@ -8,7 +8,7 @@ let budgetDay;
 
 money = 45000; // Доход за месяц
 income = 'freelance';
-addExpenses = 'Internet, telephone, eat';
+addExpenses = 'Internet, Telephone, Eat';
 deposit = true;
 mission = 300000;
 period = 12;
