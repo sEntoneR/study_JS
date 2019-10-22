@@ -68,4 +68,16 @@ if (budgetDay >= 800){
     console.log('Что то пошло не так');
 }
 
-// 
+// switch (budgetDay) {
+//     case budgetDay >= 800:
+//         console.log('Высокий уровень дохода');
+//         break;
+//     case 800 > budgetDay >= 300:
+//         console.log('Низкий уровень дохода');
+//         break;
+//     case 300 > budgetDay === 0:
+//         console.log('Низкий уровень дохода');
+//         break;
+//     default:
+//         console.log('Что то пошло не так');
+// }
