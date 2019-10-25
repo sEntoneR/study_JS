@@ -1,35 +1,22 @@
 'use strict';
 
-let money; 
-let income;
-let addExpenses;
-let deposit; 
-let mission;
-let period;
-let budgetDay;
-let question1;
-let question2;
-let expense1;
-let expense2;
-let budgetMonth;
+let money = +prompt('Ваш месячный доход?'),
+    income = 'freelance',
+    addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую'),
+    deposit = confirm('Есть ли у вас депозит в банке?'),
+    mission = 300000,
+    question1 = prompt('Какие обязательные ежемесячные расходы у вас есть?'),
+    expense1 = +prompt('Во сколько это обойдется?'),
+    question2 = prompt('Какие обязательные ежемесячные расходы у вас есть?'),
+    expense2 = +prompt('Во сколько это обойдется?'),
+    budgetMonth = money - (expense1 + expense2),
+    period = Math.ceil (mission / budgetMonth),
+    budgetDay = Math.floor (budgetMonth / 30);
 
-money = +prompt('Ваш месячный доход?');
-income = 'freelance';
-addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую');
-deposit = confirm('Есть ли у вас депозит в банке?');
-mission = 300000;
-question1 = prompt('Какие обязательные ежемесячные расходы у вас есть?');
-expense1 = +prompt('Во сколько это обойдется?');
-question2 = prompt('Какие обязательные ежемесячные расходы у вас есть?');
-expense2 = +prompt('Во сколько это обойдется?');
-budgetMonth = money - (expense1 + expense2);
-period = Math.ceil (mission / budgetMonth);
-budgetDay = Math.floor (budgetMonth / 30);
 
 let showTypeOf = function(data){
     console.log(data, typeof(data));
 };
-
 showTypeOf(money);
 showTypeOf(income);
 showTypeOf(deposit);
@@ -78,8 +65,4 @@ let getTargetMonth = function(){
     return mission / accumulatedMonth;
 };
 console.log('Срок достижения цели:' + Math.floor(getTargetMonth()));
-
-
-
-
 
