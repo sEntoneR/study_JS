@@ -1,7 +1,18 @@
 'use strict';
 
-let money,
-    income = 'freelance',
+let money;
+
+let start = function() {
+    do{
+        money = +prompt('Ваш месячный доход?');
+    }
+    while(isNaN(money) || money === '' || money === null || money === 0);
+    
+};
+
+start();
+
+let income = 'freelance',
     addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую'),
     deposit = confirm('Есть ли у вас депозит в банке?'),
     mission = 300000,
@@ -17,15 +28,7 @@ let money,
 //     }
 // };
 
-let start = function() {
-    do{
-        money = +prompt('Ваш месячный доход?');
-    }
-    while(isNaN(money) || money === '' || money === null || money === 0);
-    
-};
 
-start();
 
 let showTypeOf = function(data){
     console.log(data, typeof(data));
@@ -40,7 +43,8 @@ console.log(addExpenses.toLowerCase().split(','));
 
 
 let getExpensesMonth = function(){
-    let sum = 0;
+    let sum = 0,
+    question;
 
     for( let i = 0; i < 2; i++) {
         if ( i === 0) {
@@ -50,8 +54,11 @@ let getExpensesMonth = function(){
         if ( i === 1) {
             question2 = prompt('Введите обязательную статью доходов?', 'Шоколадница');
         }
-       sum += +prompt('Во сколько это обойдется?', '2500');
-
+        do{
+       question = prompt('Во сколько это обойдется?', '2500');
+    }
+    while(isNaN(question) || question === '' || question === null || question === 0);
+    sum += +question;
 }    
  return sum; 
 };
