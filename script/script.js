@@ -12,13 +12,22 @@ let start = function() {
 
 start();
 
-let income = 'freelance',
-    addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую'),
-    deposit = confirm('Есть ли у вас депозит в банке?'),
-    mission = 300000,
-    period = 10,
-    question1,
-    question2;
+let appData = {
+    income: {},
+    addIncome: [],
+    expenses: {},
+    addExpenses: [],
+    deposit: false,
+    mission: 250000,
+    period: 7,
+    asking: function(){
+        let    addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую');
+               appData.addExpenses = addExpenses.toLowerCase().split(',');
+               appData.deposit = confirm('Есть ли у вас депозит в банке?');    
+    }
+};
+
+
 
 // let start = function() {
 //     money = +prompt('Ваш месячный доход?');
@@ -34,12 +43,12 @@ let showTypeOf = function(data){
     console.log(data, typeof(data));
 };
 showTypeOf(money);
-showTypeOf(income);
-showTypeOf(deposit);
-
-console.log(addExpenses.toLowerCase().split(','));
+showTypeOf(appData.income);
+showTypeOf(appData.deposit);
 
 
+let question1,
+    question2;
 
 
 let getExpensesMonth = function(){
@@ -82,7 +91,7 @@ console.log('Накопления за месяц: ' + getAccumulatedMonth());
 //console.log(accumulatedMonth);
 
 let getTargetMonth = function(){
-    let achievGoal = mission / accumulatedMonth;
+    let achievGoal = appData.mission / accumulatedMonth;
   for ( let i = 1; i <= 1; i++){
     if (achievGoal < 0) {
         console.log('Цель не будет достигнута!');
