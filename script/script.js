@@ -69,7 +69,7 @@ let appData = {
               console.log('Цель не будет достигнута!');
           }
           if (achievGoal > 0){
-              console.log ('Цель будет достигнута!')
+              console.log ('Цель будет достигнута!');
           }
         }
           return achievGoal;
