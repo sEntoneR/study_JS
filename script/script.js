@@ -24,28 +24,45 @@ let appData = {
         let    addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую');
                appData.addExpenses = addExpenses.toLowerCase().split(',');
                appData.deposit = confirm('Есть ли у вас депозит в банке?');    
-        let    sum = 0,
-               question1,
-               question2;
+        // let    sum,
+        //        question1 = 0,
+        //        question2 = 0;
        
-               for( let i = 0; i < 2; i++) {
-                   if ( i === 0) {
-                       question1 = prompt('Введите обязательную статью доходов?', 'Кварплата');
-                   }
+        //        for( let i = 0; i < 2; i++) {
+        //            if ( i === 0) {
+        //                question1 = prompt('Введите обязательную статью доходов?', 'Кварплата');
+        //            }
            
-                   if ( i === 1) {
-                       question2 = prompt('Введите обязательную статью доходов?', 'Шоколадница');
-                   }
-                   do{
-                  sum = prompt('Во сколько это обойдется?', '2500');
-               }
-               while(isNaN(sum) || sum === '' || sum === null || sum === 0);
-               appData.expenses[question1] = sum;
-               appData.expenses[question2] = sum;
-           }        
+        //            if ( i === 1) {
+        //                question2 = prompt('Введите обязательную статью доходов?', 'Шоколадница');
+        //            }
+        //            do{
+        //           sum = prompt('Во сколько это обойдется?', '2500');
+        //        }
+        //        while(isNaN(sum) || sum === '' || sum === null || sum === 0);
+        //        appData.expenses[question1] = sum;
+        //        appData.expenses[question2] = sum;
+        //    }   
+        // },  
+        
+            let sum , count = 0;
+
+            for (let i = 0; i < 2; i++){
+                count = prompt('Введите обязательную статью доходов?', 'Кварплата' + (i + 1));
+
+
+            do {
+                sum = prompt('Во сколько это обойдется?', '2500');
+            }
+            while (isNaN(sum) || sum === '' || sum === null || sum === 0);
+            appData.expenses[count] = +sum;
+        }
     },
+
     budget: money,
     expensesMonth: 0,
+    budgetMonth: 0,
+    budgetDay: 0,
  
 
 
@@ -59,7 +76,8 @@ let appData = {
 
 
     getBudget: function(){
-        return money - expensesAmount;       
+        appData.budgetMonth = money - appData.expensesMonth;
+        appData.budgetDay = Math.floor(appData.budgetMonth / 30);    
     },
 
 
@@ -76,15 +94,15 @@ let appData = {
         }
     },
 
-    budgetDay: function(){
-     return    appData.getBudget() / 30;},
+    // budgetDay: function(){
+    //  return    appData.getBudget() / 30;},
     
-    budgetMonth: function(){
-        return appData.getBudget();
-    },
+    // budgetMonth: function(){
+    //     return appData.getBudget();
+    // },
 
      getTargetMonth: function(){
-        let achievGoal = appData.mission / appData.budgetMonth();
+        let achievGoal = appData.mission / appData.budgetMonth;
         for ( let i = 1; i <= 1; i++){
           if (achievGoal < 0) {
               console.log('Цель не будет достигнута!');
@@ -97,14 +115,26 @@ let appData = {
     },
 
 };
+appData.asking();
+appData.getExpensesMonth();
+appData.getBudget();
+appData.getStatusIncome();
+appData.getTargetMonth();
 
-let expensesAmount = appData.getExpensesMonth();
-console.log('Сумма расходов:' + appData.getExpensesMonth());
+for(let key in appData){
+    console.log('Наша программа включает в себя данные: ' + key + ' Значение: ' + appData[key]);
+}
+
+
+
+// let expensesAmount = appData.expensesMonth;
+console.log('Сумма расходов:' + appData.expensesMonth);
 //console.log('Накопления за месяц: ' + appData.budgetMonth());
 console.log('Срок достижения цели:' + Math.floor(appData.getTargetMonth()));
-console.log('Уровень дохода:' + appData.budgetMonth());
+console.log('Уровень дохода:' + appData.budgetMonth);
 // console.log(appData.getStatusIncome());
 // console.log(appData.budgetDay());
+
 
 
 
