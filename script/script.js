@@ -41,14 +41,11 @@ let appData = {
                 cashIncome = prompt('Сколько зарабытаваете на этом?');
             }
             while(cashIncome === null || cashIncome === '' || cashIncome === 0 || isNaN(cashIncome));
-
-        //    let itemIncome = prompt('Какой у вас дополнительный зарабаток?', 'Таксую');
-        //    let cashIncome = prompt('Сколько зарабытаваете на этом?', 10000); 
            appData.income[itemIncome] = cashIncome;
         }
 
         let    addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую');
-               appData.addExpenses = addExpenses.charAt(0).toUpperCase() + addExpenses.substring(1).toLowerCase();
+               appData.addExpenses = addExpenses.charAt(0).toUpperCase() + addExpenses.slice(1).toLowerCase();
                appData.deposit = confirm('Есть ли у вас депозит в банке?');    
 
             let sum , count = 0;
@@ -59,7 +56,7 @@ let appData = {
                     count = prompt('Введите обязательную статью доходов?', 'Кварплата' + (i + 1)); 
                 }
                 while(!isNaN(count) || count === '' || count === null || count === 0);
-                // count = prompt('Введите обязательную статью доходов?', 'Кварплата' + (i + 1));
+                
 
 
             do {
@@ -132,6 +129,7 @@ let appData = {
 
 
 };
+//appData.addExpenses = appData.addExpenses.map((item) => item[0].toUpperCase() + item.slice(1).toLowerCase);
 appData.asking();
 appData.getExpensesMonth();
 appData.getBudget();
@@ -140,25 +138,15 @@ appData.getTargetMonth();
 appData.getInfoDeposit();
 appData.calcSavedMoney();
 
-for(let key in appData){
-    console.log('Наша программа включает в себя данные: ' + key + ' Значение: ' + appData[key]);
-}
 
 
 
-// let expensesAmount = appData.expensesMonth;
+
+
 console.log('Сумма расходов:' + appData.expensesMonth);
-//console.log('Накопления за месяц: ' + appData.budgetMonth());
 console.log('Срок достижения цели:' + Math.floor(appData.getTargetMonth()));
 console.log('Уровень дохода:' + appData.budgetMonth);
-// console.log(appData.getStatusIncome());
-// console.log(appData.budgetDay());
-console.log(appData.percentDeposit, appData.moneyDeposit, appData.calcSavedMoney());
-
-
-
-
-
+console.log(appData.addExpenses);
 
 
 
