@@ -23,7 +23,8 @@ let start = document.getElementById('start'),
     targetAmount = document.querySelector('.target-amount'),
     incomeItem = document.querySelectorAll('.income-items'),
     titlePeriodAmount = document.querySelector('.period-amount'),
-    cancel = document.querySelector('#cancel');
+    cancel = document.querySelector('#cancel'),
+    control = document.querySelector('.control');
 // console.log('depositCheck: ', depositCheck);
 // console.log('startButton: ', start);
 // console.log('buttons: ', buttons);
@@ -67,6 +68,15 @@ let appData = {
             console.log('введите значение');
 
         } 
+
+        // let _control = document.querySelector('control');
+        //     _control.forEach(function(item){
+        //         item.querySelector('.control').setAttribute('disabled', 'disabled');
+        //          if (salaryAmount.value === ''){
+        //              control = _control;
+        //          }
+
+        //     });
         appData.budget = +salaryAmount.value;
 
 
