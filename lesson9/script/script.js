@@ -25,6 +25,7 @@ let start = document.getElementById('start'),
     titlePeriodAmount = document.querySelector('.period-amount'),
     cancel = document.getElementById('cancel'),
     control = document.querySelector('.control');
+   
 
 
 
@@ -79,9 +80,6 @@ let appData = {
             item.querySelector('.income-amount').value = '';
         });
 
-        additionalIncomeItem.forEach(function(item){
-            item.querySelectorAll('additional_income-item').value = '';
-        });
 
         expensesItems.forEach(function(item){
             item.querySelector('.expenses-title').value = '';
