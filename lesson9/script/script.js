@@ -92,8 +92,9 @@ let appData = {
         targetAmount.value = '';
         depositCheck.value = '';
         periodSelect.value = '1';
-        titlePeriodAmount.value = '1';
-        additionalIncomeItem.value = '';
+        titlePeriodAmount.innerText = '1';
+        additionalIncomeItem[0].value = '';
+        additionalIncomeItem[1].value = '';
         additionalExpensesItem.value = '';
         targetAmount.value = '';
         budgetMonthValue.value = '';
@@ -246,9 +247,7 @@ let appData = {
 };
 
 
-start.addEventListener('click', function(){  // привязал контекст вызова к appData
-    appData.start.call(appData);             //
-});                                          //
+start.addEventListener('click', appData.start.bind(appData));                                    //
                                              //   
 // let startFunc = appData.start.bind(appData); // Олег, посмотри, пожалуйста привязка 
                                                 // bind правильная?
