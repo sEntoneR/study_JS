@@ -9,7 +9,6 @@
   "author": "",
   "license": "ISC",
   "keywords": [],
-  "description": "",
   "devDependencies": {
     "@babel/core": "^7.7.5",
     "@babel/preset-env": "^7.7.6",
@@ -23,5 +22,6 @@
     "@babel/polyfill": "^7.7.0",
     "element-closest": "^3.0.2",
     "nodelist-foreach-polyfill": "^1.2.0"
-  }
+  },
+  "description": ""
 }
