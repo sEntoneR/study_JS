@@ -31,3 +31,17 @@ let modal = null;
 };
 
 togglePopUp();
+
+const addButton = () => {
+const hiddenBlocks = document.querySelectorAll('.hidden'),
+      addSentenceBtn = document.querySelector('.add-sentence-btn');
+      
+      addSentenceBtn.addEventListener('click', () => {
+        hiddenBlocks.forEach((item)=>item.classList.remove('hidden'));
+        addSentenceBtn.classList.add('hidden');
+        
+      });
+
+};
+
+addButton();
