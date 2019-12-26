@@ -128,7 +128,7 @@
         <div class="row">
             <h2>Онлайн конструктор септика</h2>
             <div class="col-lg-6 col-md-6 col-sm-6">
-                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel-group form-group" id="accordion" role="tablist" aria-multiselectable="true">
 
                     <div class="panel panel-default panel-one wow fadeInLeft">
                         <div class="panel-heading" role="tab" id="headingOne">
@@ -176,16 +176,16 @@
                                 <div class="select-box">
                                     <p><strong>Диаметр</strong></p>
                                     <select class="form-control expand">
-                                        <option>1.4 метра</option>
-                                        <option>2 метра</option>
+                                        <option value="1">1.4 метра</option >
+                                        <option value="2" >2 метра</option>
                                     </select>
                                 </div>
                                 <div class="select-box">
                                     <p><strong>Количество колец</strong></p>
                                     <select class="form-control expand">
-                                        <option>1 штука</option>
-                                        <option>2 штуки</option>
-                                        <option>3 штуки</option>
+                                        <option value ="1">1 штука</option>
+                                        <option value="2">2 штуки</option>
+                                        <option value="3">3 штуки</option>
                                     </select>
                                 </div>
 
@@ -193,16 +193,16 @@
                                 <div class="select-box">
                                     <p><strong>Диаметр</strong></p>
                                     <select class="form-control expand">
-                                        <option>1.4 метра</option>
-                                        <option>2 метра</option>
+                                        <option value="1">1.4 метра</option>
+                                        <option value="2">2 метра</option>
                                     </select>
                                 </div>
                                 <div class="select-box">
                                     <p><strong>Количество колец</strong></p>
                                     <select class="form-control expand">
-                                        <option>1 штука</option>
-                                        <option>2 штуки</option>
-                                        <option>3 штуки</option>
+                                        <option value="1"> 1 штука</option>
+                                        <option value="2">2 штуки</option>
+                                        <option value="3">3 штуки</option>
                                     </select>
                                 </div>
                                 <a class="button construct-btn" data-toggle="collapse" data-parent="#accordion"
@@ -439,7 +439,7 @@
             <div class="col-lg-6 col-md-6">
                 <p class="question">Остались вопросы?</p>
                 <p>Введите свой вопрос и в течении 15 минут я свяжусь с вами!</p>
-                <form class="director-form">
+                <form class="director-form" id="directorForm">
                     <input type="text" name="user_quest" placeholder="Введите свой вопрос" required>
                     <button class="button director-btn consultation-btn" name="submit" type="submit">Получить
                         консультацию
