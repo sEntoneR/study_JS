@@ -12,7 +12,7 @@ import 'fetch-polyfill';
 import accordion from './modules/accordion';
 import accordionTwo from './modules/accordionTwo';
 import addButton from './modules/addButton';
-import calculator from './modules/popUpCall';
+import calculator from './modules/calculator';
 import consultation from './modules/consultation';
 import consultationSection from './modules/consultationSection';
 import popUpCall from './modules/popUpCall';
